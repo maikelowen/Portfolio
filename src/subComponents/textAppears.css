@@ -1,0 +1,50 @@
+ul{
+    position: relative;
+}
+
+ul li{
+    list-style: none;
+    margin: 0 20px;
+    font-size:4rem;
+}
+
+ul li a{
+    color:rgba(255, 255, 255, 0.1);
+    position:relative;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ul li a:before{
+  content: attr(data-content);
+  position:absolute; 
+  overflow-y: hidden;
+  color: #1bfaad; 
+  white-space:nowrap;
+  overflow:hidden;
+}
+
+ul:hover li a:before{
+    animation: animate 2s steps(10) forwards;
+  }
+
+  @keyframes animate{
+      0% {
+          width:55.625px,
+      }
+      100%{
+            width: 0px;
+      }
+  }
+  ul li:hover a:before{
+    animation: animateTwo 2s steps(10) forwards;
+  }
+
+  @keyframes animateTwo{
+      0% {
+          width:0px,
+      }
+      100%{
+            width: 55.625px;
+      }
+  }
